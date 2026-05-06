@@ -2,10 +2,10 @@ import json
 import os
 
 def lookup_refund_policy(plan_type: str) -> dict:
-    """
-    MCP Tool: Look up refund policy by plan type.
-    Returns refund rules for the given plan type.
-    """
+  
+     #MCP Tool: Look up refund policy by plan type.
+    #Returns refund rules for the given plan type.
+  
     
     # Build the path to the refund_policy.json file
     data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'refund_policy.json')

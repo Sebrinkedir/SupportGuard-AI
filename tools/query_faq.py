@@ -1,5 +1,5 @@
 import json
-import os
+import os # to find file path 
 
 def query_faq(topic: str) -> dict:
     """
