@@ -1,0 +1,40 @@
+{
+  "refund_policies": [
+    {
+      "plan_type": "free",
+      "refund_eligible": false,
+      "reason": "Free plans are not eligible for refunds as no payment is made.",
+      "exceptions": []
+    },
+    {
+      "plan_type": "basic",
+      "refund_eligible": true,
+      "refund_window_days": 14,
+      "reason": "Basic plan users can request a refund within 14 days of purchase.",
+      "exceptions": [
+        "Refund not applicable if service has been fully used.",
+        "Refund not applicable for partial months."
+      ]
+    },
+    {
+      "plan_type": "premium",
+      "refund_eligible": true,
+      "refund_window_days": 30,
+      "reason": "Premium plan users can request a refund within 30 days of purchase.",
+      "exceptions": [
+        "Refund not applicable if account has violated Terms of Service.",
+        "Refund not applicable for add-on purchases."
+      ]
+    },
+    {
+      "plan_type": "enterprise",
+      "refund_eligible": true,
+      "refund_window_days": 60,
+      "reason": "Enterprise clients can request a refund within 60 days subject to contract terms.",
+      "exceptions": [
+        "Refund terms may vary based on signed contract.",
+        "Must be approved by account manager."
+      ]
+    }
+  ]
+}

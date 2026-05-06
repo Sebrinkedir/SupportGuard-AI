@@ -1,0 +1,34 @@
+{
+  "faqs": [
+    {
+      "id": "faq_001",
+      "topic": "billing",
+      "question": "Why was I charged twice this month?",
+      "answer": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID and we will investigate and refund the duplicate charge within 5-7 business days."
+    },
+    {
+      "id": "faq_002",
+      "topic": "billing",
+      "question": "How do I update my payment method?",
+      "answer": "You can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method."
+    },
+    {
+      "id": "faq_003",
+      "topic": "account_access",
+      "question": "I cannot log into my account.",
+      "answer": "Please use the Forgot Password option on the login page. If the issue persists, contact support and we will verify your identity and restore access."
+    },
+    {
+      "id": "faq_004",
+      "topic": "technical",
+      "question": "The app is not loading properly.",
+      "answer": "Try clearing your browser cache and cookies. If the issue continues, check our status page for any ongoing outages."
+    },
+    {
+      "id": "faq_005",
+      "topic": "policy_clarification",
+      "question": "Can I share my account with someone else?",
+      "answer": "Account sharing is not permitted under our Terms of Service. Each user must have their own account."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "account_permissions": [
+    {
+      "action": "password_reset",
+      "allowed": true,
+      "who_can_perform": "customer or support agent",
+      "notes": "Customer can self-serve via Forgot Password. Support can trigger manually after identity verification."
+    },
+    {
+      "action": "account_suspension",
+      "allowed": true,
+      "who_can_perform": "support agent only",
+      "notes": "Customers cannot suspend their own account. Only support agents can suspend after review."
+    },
+    {
+      "action": "account_deletion",
+      "allowed": true,
+      "who_can_perform": "customer or support agent",
+      "notes": "Customer can request deletion via Settings. Support must process within 30 days per data policy."
+    },
+    {
+      "action": "refund_processing",
+      "allowed": true,
+      "who_can_perform": "support agent only",
+      "notes": "Refunds cannot be promised or processed by the AI. Must be escalated to a human support agent."
+    },
+    {
+      "action": "plan_upgrade",
+      "allowed": true,
+      "who_can_perform": "customer or support agent",
+      "notes": "Customer can upgrade via Billing Settings. Support can assist if customer faces issues."
+    },
+    {
+      "action": "plan_downgrade",
+      "allowed": true,
+      "who_can_perform": "customer or support agent",
+      "notes": "Downgrade takes effect at end of current billing cycle. No partial refunds for downgrades."
+    },
+    {
+      "action": "issue_refund_promise",
+      "allowed": false,
+      "who_can_perform": "nobody",
+      "notes": "AI agents must never promise a refund directly. Always escalate to human agent."
+    }
+  ]
+}
