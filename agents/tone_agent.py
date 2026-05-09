@@ -1,11 +1,10 @@
-import google.generativeai as genai
 import os
 import json
 from dotenv import load_dotenv
+from google import genai
 
-# Load API key from .env file
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def run_tone_agent(customer_query: str) -> dict:
     """
@@ -39,8 +38,8 @@ def run_tone_agent(customer_query: str) -> dict:
     """
 
     # Step 2 - Call Gemini
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
+    raw = response.text.strip().replace("```json", "").replace("```", "")
 
     # Step 3 - Parse and return the result
     raw = response.text.strip().replace("```json", "").replace("```", "")

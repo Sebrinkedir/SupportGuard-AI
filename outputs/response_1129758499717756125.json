@@ -1,0 +1,89 @@
+{
+  "query": "I was charged twice this month and I want a refund.",
+  "final_response": "I understand you've been charged twice this month and are requesting a refund. As an AI, I cannot directly process refunds or access your specific billing details. To investigate the double charge and discuss your refund eligibility based on our policies and your account status, I need to escalate this to our human support team. They will review your account and assist you further. Would you like me to create a support ticket for you? Duplicate charges can occur due to a system error. Please contact support with your transaction ID, and we will investigate and refund the duplicate charge within 5-7 business days. We understand you were charged twice this month and want a refund. Duplicate charges can occur due to a system error. Please provide your transaction ID so we can investigate and process your refund within 5-7 business days.",
+  "arbitration": {
+    "approved_fragments": [
+      {
+        "agent": "policy",
+        "fragment": "I understand you've been charged twice this month and are requesting a refund. As an AI, I cannot directly process refunds or access your specific billing details. To investigate the double charge and discuss your refund eligibility based on our policies and your account status, I need to escalate this to our human support team. They will review your account and assist you further. Would you like me to create a support ticket for you?",
+        "ras": 0.6
+      },
+      {
+        "agent": "factual",
+        "fragment": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID, and we will investigate and refund the duplicate charge within 5-7 business days.",
+        "ras": 1.0
+      },
+      {
+        "agent": "intent",
+        "fragment": "We understand you were charged twice this month and want a refund. Duplicate charges can occur due to a system error. Please provide your transaction ID so we can investigate and process your refund within 5-7 business days.",
+        "ras": 0.98
+      }
+    ],
+    "rejected_fragments": [
+      {
+        "agent": "tone",
+        "fragment": "Oh no, I'm so sorry to hear you've been charged twice this month! I can definitely help you look into this and work towards processing your refund.",
+        "ras": 0.2
+      }
+    ],
+    "ras_scores": [
+      0.98,
+      0.6,
+      1.0,
+      0.2
+    ],
+    "average_ras": 0.695
+  },
+  "reliability": {
+    "reliability_score": 0.9346,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.6728,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "duplicate charge",
+        "refund request"
+      ],
+      "response_fragment": "We understand you were charged twice this month and want a refund. Duplicate charges can occur due to a system error. Please provide your transaction ID so we can investigate and process your refund within 5-7 business days.",
+      "severity": "high",
+      "confidence_score": 0.98,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "I understand you've been charged twice this month and are requesting a refund. As an AI, I cannot directly process refunds or access your specific billing details. To investigate the double charge and discuss your refund eligibility based on our policies and your account status, I need to escalate this to our human support team. They will review your account and assist you further. Would you like me to create a support ticket for you?",
+      "severity": "medium",
+      "confidence_score": 1.0,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "Duplicate charges can occur due to a system error.",
+        "Customers should contact support with their transaction ID to investigate a duplicate charge.",
+        "Duplicate charges will be refunded.",
+        "Refunds for duplicate charges are processed within 5-7 business days."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID, and we will investigate and refund the duplicate charge within 5-7 business days.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "Oh no, I'm so sorry to hear you've been charged twice this month! I can definitely help you look into this and work towards processing your refund.",
+      "severity": "low",
+      "confidence_score": 1.0,
+      "agent": "tone"
+    }
+  ]
+}

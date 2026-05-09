@@ -17,4 +17,4 @@ SEVERITY_SCORES = {
 RAS_THRESHOLD = 0.6
 
 # Gemini model to use
-MODEL_NAME = "gemini-1.5-flash"
+MODEL_NAME = "gemini-2.5-flash"
