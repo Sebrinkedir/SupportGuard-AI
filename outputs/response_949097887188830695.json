@@ -1,0 +1,89 @@
+{
+  "query": "I was charged twice this month and I want a refund.",
+  "final_response": "We're sorry, we could not generate a verified response at this time. Please contact our support team directly.",
+  "arbitration": {
+    "approved_fragments": [],
+    "rejected_fragments": [
+      {
+        "agent": "intent",
+        "fragment": "It sounds like you've been charged twice. We can investigate this and process a refund for the duplicate charge. Please provide your transaction ID, and the refund will typically be processed within 5-7 business days.",
+        "ras": 0.297
+      },
+      {
+        "agent": "policy",
+        "fragment": "I understand you've been charged twice and are requesting a refund. As an automated system, I cannot directly process refunds or make definitive statements regarding eligibility. To resolve this, I need to escalate your request to a human support agent who can access your account details and apply our refund policies based on your plan type. They will contact you shortly to assist further.",
+        "ras": 0.21
+      },
+      {
+        "agent": "factual",
+        "fragment": "Duplicate charges can occur due to a system error. To investigate and process a refund, please contact support with your transaction ID. We will refund the duplicate charge within 5-7 business days.",
+        "ras": 0.05
+      },
+      {
+        "agent": "tone",
+        "fragment": "Oh no, I'm so sorry to hear you've been charged twice this month. I understand this can be very frustrating, and I'm here to help you get this resolved.",
+        "ras": 0.095
+      }
+    ],
+    "ras_scores": [
+      0.297,
+      0.21,
+      0.05,
+      0.095
+    ],
+    "average_ras": 0.163
+  },
+  "reliability": {
+    "reliability_score": 0.9806,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.9031,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "duplicate charge",
+        "refund request",
+        "transaction ID needed",
+        "refund processing time"
+      ],
+      "response_fragment": "It sounds like you've been charged twice. We can investigate this and process a refund for the duplicate charge. Please provide your transaction ID, and the refund will typically be processed within 5-7 business days.",
+      "severity": "high",
+      "confidence_score": 0.99,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "I understand you've been charged twice and are requesting a refund. As an automated system, I cannot directly process refunds or make definitive statements regarding eligibility. To resolve this, I need to escalate your request to a human support agent who can access your account details and apply our refund policies based on your plan type. They will contact you shortly to assist further.",
+      "severity": "medium",
+      "confidence_score": 1.0,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "Duplicate charges can occur due to a system error.",
+        "You need to contact support with your transaction ID to investigate and refund a duplicate charge.",
+        "The refund for a duplicate charge will be processed within 5-7 business days."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "Duplicate charges can occur due to a system error. To investigate and process a refund, please contact support with your transaction ID. We will refund the duplicate charge within 5-7 business days.",
+      "severity": "low",
+      "confidence_score": 1.0,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "Oh no, I'm so sorry to hear you've been charged twice this month. I understand this can be very frustrating, and I'm here to help you get this resolved.",
+      "severity": "high",
+      "confidence_score": 0.95,
+      "agent": "tone"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "test_queries": [
+    {"id": 1, "category": "billing", "query": "I was charged twice this month and I want a refund."},
+    {"id": 2, "category": "billing", "query": "How do I update my credit card information?"},
+    {"id": 3, "category": "billing", "query": "I cancelled my subscription but was still charged. I need my money back immediately."},
+    {"id": 4, "category": "account_access", "query": "I cannot log into my account. I have tried resetting my password but it is not working."},
+    {"id": 5, "category": "account_access", "query": "My account has been locked and I need to recover it urgently."},
+    {"id": 6, "category": "account_access", "query": "Can I share my account login with my colleague?"},
+    {"id": 7, "category": "technical", "query": "The app is not loading and I keep getting a blank screen."},
+    {"id": 8, "category": "technical", "query": "I cannot upload files to the platform. It keeps timing out."},
+    {"id": 9, "category": "policy_clarification", "query": "What is your refund policy for premium plan users?"},
+    {"id": 10, "category": "policy_clarification", "query": "Am I eligible for a refund if I cancel within 3 days of signing up?"},
+    {"id": 11, "category": "billing", "query": "I was billed for an enterprise plan but I only signed up for basic. This is unacceptable."},
+    {"id": 12, "category": "technical", "query": "Your system is down and I cannot access any of my data. This is affecting my business."},
+    {"id": 13, "category": "account_access", "query": "I want to delete my account and all my data permanently."},
+    {"id": 14, "category": "policy_clarification", "query": "Can I downgrade my plan mid-month and get a partial refund?"},
+    {"id": 15, "category": "billing", "query": "Why does my invoice show a different amount than what I was quoted?"}
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "query": "I was charged twice this month and I want a refund.",
+  "final_response": "We're sorry, we could not generate a verified response at this time. Please contact our support team directly.",
+  "arbitration": {
+    "approved_fragments": [],
+    "rejected_fragments": [
+      {
+        "agent": "intent",
+        "fragment": "It sounds like you've been charged twice this month. Please provide your transaction ID so we can investigate and process a refund for the duplicate charge within 5-7 business days.",
+        "ras": 0.294
+      },
+      {
+        "agent": "policy",
+        "fragment": "Please contact our support team directly for assistance.",
+        "ras": 0.105
+      },
+      {
+        "agent": "factual",
+        "fragment": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID, and we will investigate and refund the duplicate charge within 5-7 business days.",
+        "ras": 0.05
+      },
+      {
+        "agent": "tone",
+        "fragment": "I'm so sorry to hear you've been charged twice this month. That's definitely not right, and I understand you'd like a refund. Let's get this sorted out for you right away.",
+        "ras": 0.1
+      }
+    ],
+    "ras_scores": [
+      0.294,
+      0.105,
+      0.05,
+      0.1
+    ],
+    "average_ras": 0.1372
+  },
+  "reliability": {
+    "reliability_score": 0.5814,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 0.0,
+    "stability": 0.907,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "duplicate charge",
+        "refund request",
+        "transaction ID"
+      ],
+      "response_fragment": "It sounds like you've been charged twice this month. Please provide your transaction ID so we can investigate and process a refund for the duplicate charge within 5-7 business days.",
+      "severity": "high",
+      "confidence_score": 0.98,
+      "agent": "intent"
+    },
+    {
+      "agent": "policy",
+      "policy_compliant": false,
+      "violations": [
+        "Response could not be validated due to a system error"
+      ],
+      "response_fragment": "Please contact our support team directly for assistance.",
+      "severity": "high",
+      "confidence_score": 0.3,
+      "error": "[SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1020)"
+    },
+    {
+      "supported_claims": [
+        "Duplicate charges can occur due to a system error.",
+        "Please contact support with your transaction ID.",
+        "We will investigate and refund the duplicate charge within 5-7 business days."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID, and we will investigate and refund the duplicate charge within 5-7 business days.",
+      "severity": "low",
+      "confidence_score": 1.0,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "I'm so sorry to hear you've been charged twice this month. That's definitely not right, and I understand you'd like a refund. Let's get this sorted out for you right away.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "tone"
+    }
+  ]
+}

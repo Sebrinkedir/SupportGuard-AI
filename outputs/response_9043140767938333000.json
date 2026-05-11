@@ -1,0 +1,86 @@
+{
+  "query": "Hi, I need a refund for my reservation 8958",
+  "final_response": "We have received your refund request for reservation 8958. Our team is reviewing this for you.",
+  "arbitration": {
+    "approved_fragments": [
+      {
+        "agent": "intent",
+        "fragment": "We have received your refund request for reservation 8958. Our team is reviewing this for you.",
+        "ras": 0.294
+      }
+    ],
+    "rejected_fragments": [
+      {
+        "agent": "policy",
+        "fragment": "I understand you're requesting a refund for reservation 8958. Refund requests require review by our human support team to assess eligibility based on your plan type and our refund policies. I've escalated your request to an agent who will review your account details and contact you shortly to assist further.",
+        "ras": 0.0665
+      },
+      {
+        "agent": "factual",
+        "fragment": "I cannot find information about refunds for reservations in our FAQ documents. For assistance with your reservation refund, please contact customer support directly.",
+        "ras": 0.025
+      },
+      {
+        "agent": "tone",
+        "fragment": "Absolutely, I can certainly help you with your refund request for reservation 8958. To process this for you, could you please provide a bit more information or confirm if you've already cancelled the reservation?",
+        "ras": 0.06
+      }
+    ],
+    "ras_scores": [
+      0.294,
+      0.0665,
+      0.025,
+      0.06
+    ],
+    "average_ras": 0.1114
+  },
+  "reliability": {
+    "reliability_score": 0.5787,
+    "hallucination_rate": 1.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.8934,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "refund",
+        "reservation 8958"
+      ],
+      "response_fragment": "We have received your refund request for reservation 8958. Our team is reviewing this for you.",
+      "severity": "high",
+      "confidence_score": 0.98,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "I understand you're requesting a refund for reservation 8958. Refund requests require review by our human support team to assess eligibility based on your plan type and our refund policies. I've escalated your request to an agent who will review your account details and contact you shortly to assist further.",
+      "severity": "low",
+      "confidence_score": 0.95,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [],
+      "unsupported_claims": [
+        "information regarding refunds for reservations"
+      ],
+      "response_fragment": "I cannot find information about refunds for reservations in our FAQ documents. For assistance with your reservation refund, please contact customer support directly.",
+      "severity": "high",
+      "confidence_score": 0.1,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "Absolutely, I can certainly help you with your refund request for reservation 8958. To process this for you, could you please provide a bit more information or confirm if you've already cancelled the reservation?",
+      "severity": "medium",
+      "confidence_score": 1.0,
+      "agent": "tone"
+    }
+  ]
+}

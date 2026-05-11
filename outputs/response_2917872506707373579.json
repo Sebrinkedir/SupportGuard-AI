@@ -1,0 +1,88 @@
+{
+  "query": "I was charged twice this month and I want a refund.",
+  "final_response": "We're sorry, we could not generate a verified response at this time. Please contact our support team directly.",
+  "arbitration": {
+    "approved_fragments": [],
+    "rejected_fragments": [
+      {
+        "agent": "intent",
+        "fragment": "It appears you were charged twice this month. Please provide your transaction ID so we can investigate and process your refund, which typically takes 5-7 business days.",
+        "ras": 0.297
+      },
+      {
+        "agent": "policy",
+        "fragment": "I understand you've been charged twice and are requesting a refund. Refund requests require review by our support team to assess eligibility based on your account details and applicable policies. I am escalating this to a human agent who will investigate your charges and assist you directly.",
+        "ras": 0.07
+      },
+      {
+        "agent": "factual",
+        "fragment": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID so we can investigate and refund the duplicate charge, which typically takes 5-7 business days.",
+        "ras": 0.25
+      },
+      {
+        "agent": "tone",
+        "fragment": "I'm so sorry to hear you've been charged twice this month. That's definitely not right, and I understand how frustrating that must be. I can certainly help you look into this and ensure we get it resolved for you.",
+        "ras": 0.1
+      }
+    ],
+    "ras_scores": [
+      0.297,
+      0.07,
+      0.25,
+      0.1
+    ],
+    "average_ras": 0.1792
+  },
+  "reliability": {
+    "reliability_score": 0.9807,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.9037,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "duplicate charge",
+        "refund request",
+        "transaction ID"
+      ],
+      "response_fragment": "It appears you were charged twice this month. Please provide your transaction ID so we can investigate and process your refund, which typically takes 5-7 business days.",
+      "severity": "high",
+      "confidence_score": 0.99,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "I understand you've been charged twice and are requesting a refund. Refund requests require review by our support team to assess eligibility based on your account details and applicable policies. I am escalating this to a human agent who will investigate your charges and assist you directly.",
+      "severity": "low",
+      "confidence_score": 1.0,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "Duplicate charges can occur due to a system error.",
+        "Customers should contact support with their transaction ID to investigate duplicate charges.",
+        "A refund for a duplicate charge will be processed within 5-7 business days."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "Duplicate charges can occur due to a system error. Please contact support with your transaction ID so we can investigate and refund the duplicate charge, which typically takes 5-7 business days.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "I'm so sorry to hear you've been charged twice this month. That's definitely not right, and I understand how frustrating that must be. I can certainly help you look into this and ensure we get it resolved for you.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "tone"
+    }
+  ]
+}

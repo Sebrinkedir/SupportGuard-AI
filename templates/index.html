@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>SupportGuard AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f0f4f8; }
+    header { background: #1a1a2e; color: white; padding: 20px 40px; }
+    #chat { max-width: 700px; margin: 20px auto; padding: 0 20px; min-height: 400px; }
+    .user-msg { background: #1a1a2e; color: white; padding: 12px; border-radius: 10px; margin: 10px 0; max-width: 80%; margin-left: auto; }
+    .bot-msg { background: white; color: #333; padding: 12px; border-radius: 10px; margin: 10px 0; max-width: 80%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .meta { font-size: 12px; color: #888; margin-top: 8px; }
+    #input-area { position: fixed; bottom: 0; width: 100%; background: white; padding: 16px; border-top: 1px solid #ddd; display: flex; justify-content: center; }
+    #input-inner { display: flex; gap: 10px; width: 100%; max-width: 700px; }
+    #userInput { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; }
+    #sendBtn { background: #1a1a2e; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 15px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🛡️ SupportGuard AI</h1>
+    <p style="font-size:13px; color:#a0aec0;">Multi-Agent Customer Support System</p>
+  </header>
+
+  <div id="chat">
+    <p style="color:#888; text-align:center; margin-top:40px;">Ask about billing, refunds, account access or technical issues.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+
+  <div id="input-area">
+    <div id="input-inner">
+      <input type="text" id="userInput" placeholder="Type your question here..."/>
+      <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById("chat");
+    const input = document.getElementById("userInput");
+    const btn = document.getElementById("sendBtn");
+
+    input.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+    async function sendMessage() {
+      const query = input.value.trim();
+      if (!query) return;
+
+      const userDiv = document.createElement("div");
+      userDiv.className = "user-msg";
+      userDiv.innerText = query;
+      chat.appendChild(userDiv);
+      input.value = "";
+      btn.disabled = true;
+
+      const typing = document.createElement("div");
+      typing.className = "bot-msg";
+      typing.innerText = "Analyzing your query...";
+      chat.appendChild(typing);
+
+      try {
+        const res = await fetch("/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query })
+        });
+        const data = await res.json();
+        typing.innerHTML = data.response +
+          `<div class="meta">
+            ⚖️ RAS: ${data.ras} &nbsp;|&nbsp;
+            🎯 Reliability: ${data.reliability} &nbsp;|&nbsp;
+            ✅ Approved: ${data.approved} &nbsp;|&nbsp;
+            ❌ Rejected: ${data.rejected}
+          </div>`;
+      } catch(e) {
+        typing.innerText = "Something went wrong. Please try again.";
+      }
+
+      btn.disabled = false;
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
+
+</body>
+</html>

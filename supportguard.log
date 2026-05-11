@@ -1,0 +1,111 @@
+2026-05-10 00:42:24,137 | INFO | __main__ | New query received: I was charged twice this month and I want a refund.
+2026-05-10 00:42:24,146 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:42:26,867 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:42:26,916 | INFO | agents.intent_agent | Intent agent completed | topic: billing | confidence: 0.98
+2026-05-10 00:42:26,930 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:42:33,113 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:42:33,120 | INFO | agents.policy_agent | Policy agent completed | compliant: True | confidence: 0.95
+2026-05-10 00:42:33,127 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:42:37,312 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:42:37,316 | INFO | agents.factual_agent | Factual agent completed | supported: 4 | unsupported: 0
+2026-05-10 00:42:37,317 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:42:41,878 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:42:41,882 | INFO | agents.tone_agent | Tone agent completed | severity: high | confidence: 1.0
+2026-05-10 00:42:41,884 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 1.0 | Confidence: 0.98 | RAS: 0.294
+2026-05-10 00:42:41,885 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 0.2 | Confidence: 0.95 | RAS: 0.0665
+2026-05-10 00:42:41,886 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 1.0 | Confidence: 1.0 | RAS: 0.25
+2026-05-10 00:42:41,886 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 1.0 | Confidence: 1.0 | RAS: 0.1
+2026-05-10 00:42:41,890 | INFO | __main__ | Query complete | RAS: 0.1776 | Reliability: 0.9807 | Hallucination Rate: 0.0
+2026-05-10 00:43:21,927 | INFO | __main__ | New query received: I was charged twice this month and I want a refund.
+2026-05-10 00:43:21,930 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:43:24,827 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:43:24,833 | INFO | agents.intent_agent | Intent agent completed | topic: billing | confidence: 0.99
+2026-05-10 00:43:24,845 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:43:29,639 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:43:29,643 | INFO | agents.policy_agent | Policy agent completed | compliant: True | confidence: 1.0
+2026-05-10 00:43:29,647 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:43:34,964 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:43:34,969 | INFO | agents.factual_agent | Factual agent completed | supported: 3 | unsupported: 0
+2026-05-10 00:43:34,971 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 00:43:39,467 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 00:43:39,470 | INFO | agents.tone_agent | Tone agent completed | severity: high | confidence: 1.0
+2026-05-10 00:43:39,471 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 1.0 | Confidence: 0.99 | RAS: 0.297
+2026-05-10 00:43:39,472 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 0.2 | Confidence: 1.0 | RAS: 0.07
+2026-05-10 00:43:39,475 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 1.0 | Confidence: 1.0 | RAS: 0.25
+2026-05-10 00:43:39,476 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 1.0 | Confidence: 1.0 | RAS: 0.1
+2026-05-10 00:43:39,481 | INFO | __main__ | Query complete | RAS: 0.1792 | Reliability: 0.9807 | Hallucination Rate: 0.0
+2026-05-10 13:03:55,425 | INFO | __main__ | New query received: I was charged twice this month and I want a refund.
+2026-05-10 13:03:55,460 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:03:59,326 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:03:59,339 | INFO | agents.intent_agent | Intent agent completed | topic: billing | confidence: 0.98
+2026-05-10 13:03:59,452 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:03:59,731 | ERROR | agents.policy_agent | Policy agent unexpected error: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1020)
+2026-05-10 13:03:59,782 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:04:03,581 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:04:03,584 | INFO | agents.factual_agent | Factual agent completed | supported: 3 | unsupported: 0
+2026-05-10 13:04:03,585 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:04:07,239 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:04:07,241 | INFO | agents.tone_agent | Tone agent completed | severity: high | confidence: 1.0
+2026-05-10 13:04:07,243 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 1.0 | Confidence: 0.98 | RAS: 0.294
+2026-05-10 13:04:07,243 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 1.0 | Confidence: 0.3 | RAS: 0.105
+2026-05-10 13:04:07,243 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.2 | Confidence: 1.0 | RAS: 0.05
+2026-05-10 13:04:07,244 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 1.0 | Confidence: 1.0 | RAS: 0.1
+2026-05-10 13:04:07,245 | INFO | __main__ | Query complete | RAS: 0.1372 | Reliability: 0.5814 | Hallucination Rate: 0.0
+2026-05-10 13:08:16,496 | INFO | __main__ | New query received: I was charged twice this month and I want a refund.
+2026-05-10 13:08:16,498 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:08:19,920 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:08:19,922 | INFO | agents.intent_agent | Intent agent completed | topic: billing | confidence: 0.99
+2026-05-10 13:08:19,925 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:08:27,502 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:08:27,505 | INFO | agents.policy_agent | Policy agent completed | compliant: True | confidence: 1.0
+2026-05-10 13:08:27,507 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:08:34,767 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:08:34,769 | INFO | agents.factual_agent | Factual agent completed | supported: 3 | unsupported: 0
+2026-05-10 13:08:34,769 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-10 13:08:39,456 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-10 13:08:39,458 | INFO | agents.tone_agent | Tone agent completed | severity: high | confidence: 0.95
+2026-05-10 13:08:39,459 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 1.0 | Confidence: 0.99 | RAS: 0.297
+2026-05-10 13:08:39,460 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 0.6 | Confidence: 1.0 | RAS: 0.21
+2026-05-10 13:08:39,460 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.2 | Confidence: 1.0 | RAS: 0.05
+2026-05-10 13:08:39,460 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 1.0 | Confidence: 0.95 | RAS: 0.095
+2026-05-10 13:08:39,461 | INFO | __main__ | Query complete | RAS: 0.163 | Reliability: 0.9806 | Hallucination Rate: 0.0
+2026-05-11 23:24:33,892 | INFO | __main__ | New query received: I was charged twice this month and I want a refund.
+2026-05-11 23:24:33,921 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-11 23:24:36,625 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-11 23:24:36,630 | INFO | agents.intent_agent | Intent agent completed | topic: billing | confidence: 0.98
+2026-05-11 23:24:36,683 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-11 23:24:41,542 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-11 23:24:41,543 | INFO | agents.policy_agent | Policy agent completed | compliant: True | confidence: 0.95
+2026-05-11 23:24:41,545 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-11 23:24:45,228 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-11 23:24:45,232 | INFO | agents.factual_agent | Factual agent completed | supported: 6 | unsupported: 0
+2026-05-11 23:24:45,233 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-11 23:24:49,027 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-05-11 23:24:49,031 | INFO | agents.tone_agent | Tone agent completed | severity: high | confidence: 0.95
+2026-05-11 23:24:49,032 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 1.0 | Confidence: 0.98 | RAS: 0.294
+2026-05-11 23:24:49,033 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 0.2 | Confidence: 0.95 | RAS: 0.0665
+2026-05-11 23:24:49,034 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.2 | Confidence: 1.0 | RAS: 0.05
+2026-05-11 23:24:49,035 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 1.0 | Confidence: 0.95 | RAS: 0.095
+2026-05-11 23:24:49,037 | INFO | __main__ | Query complete | RAS: 0.1264 | Reliability: 0.9804 | Hallucination Rate: 0.0
+2026-05-11 23:28:46,397 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-11 23:28:46,398 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-05-11 23:28:46,401 | INFO | werkzeug |  * Restarting with stat
+2026-05-11 23:28:58,919 | WARNING | werkzeug |  * Debugger is active!
+2026-05-11 23:28:58,937 | INFO | werkzeug |  * Debugger PIN: 137-806-413
+2026-05-11 23:34:13,785 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:34:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-11 23:34:14,145 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:34:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-11 23:34:14,314 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:34:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-11 23:34:14,736 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:34:14] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=zwJDW8C7aAtV7UD3KWdr HTTP/1.1" 200 -
+2026-05-11 23:34:14,965 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:34:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-11 23:36:19,567 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-11 23:36:19,568 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-05-11 23:36:19,573 | INFO | werkzeug |  * Restarting with stat
+2026-05-11 23:36:34,123 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:36:34] "GET / HTTP/1.1" 200 -
+2026-05-11 23:36:34,258 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:36:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-11 23:36:43,472 | WARNING | werkzeug |  * Debugger is active!
+2026-05-11 23:36:43,495 | INFO | werkzeug |  * Debugger PIN: 137-806-413
+2026-05-11 23:37:06,739 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:37:06] "GET / HTTP/1.1" 200 -
+2026-05-11 23:37:56,013 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:37:56] "GET / HTTP/1.1" 200 -
+2026-05-11 23:38:00,413 | INFO | werkzeug | 127.0.0.1 - - [11/May/2026 23:38:00] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -

@@ -1,30 +1,29 @@
 import os
 import json
+import logging
 from dotenv import load_dotenv
 from google import genai
 from tools.query_faq import query_faq
 
 load_dotenv()
+logger = logging.getLogger(__name__)
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def run_intent_agent(customer_query: str) -> dict:
-    """
-    Intent Analysis Agent.
-    Classifies the customer query and identifies what information is needed.
-    """
 
-    # Step 1 - Use MCP tool to fetch all FAQ topics
     faq_topics = ["billing", "account_access", "technical", "policy_clarification"]
     faq_context = ""
     for topic in faq_topics:
-        result = query_faq(topic)
-        if result["status"] == "found":
-            faq_context += json.dumps(result["results"]) + "\n"
+        try:
+            result = query_faq(topic)
+            if result["status"] == "found":
+                faq_context += json.dumps(result["results"]) + "\n"
+        except Exception as e:
+            logger.warning(f"FAQ tool failed for topic {topic}: {e}")
 
-    # Step 2 - Build the prompt for Gemini
     prompt = f"""
     You are an Intent Analysis Agent for a customer support system.
-    
+
     Your job is to:
     1. Classify the customer query into one of these topics:
        billing, account_access, technical, policy_clarification
@@ -48,12 +47,33 @@ def run_intent_agent(customer_query: str) -> dict:
     Respond with JSON only. No extra text.
     """
 
-    # Step 3 - Call Gemini
-    response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
-    raw = response.text.strip().replace("```json", "").replace("```", "")
+    try:
+        response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
+        raw = response.text.strip().replace("```json", "").replace("```", "")
+        result = json.loads(raw)
+        result["agent"] = "intent"
+        logger.info(f"Intent agent completed | topic: {result.get('topic')} | confidence: {result.get('confidence_score')}")
+        return result
 
-    # Step 4 - Parse and return the result
-    raw = response.text.strip().replace("```json", "").replace("```", "")
-    result = json.loads(raw)
-    result["agent"] = "intent"
-    return result
+    except json.JSONDecodeError as e:
+        logger.error(f"Intent agent JSON parse error: {e}")
+        return {
+            "agent": "intent",
+            "topic": "unknown",
+            "key_elements": [],
+            "response_fragment": "Thank you for reaching out. We will look into your query and get back to you shortly.",
+            "severity": "medium",
+            "confidence_score": 0.3,
+            "error": "json_parse_error"
+        }
+    except Exception as e:
+        logger.error(f"Intent agent unexpected error: {e}")
+        return {
+            "agent": "intent",
+            "topic": "unknown",
+            "key_elements": [],
+            "response_fragment": "Thank you for reaching out. We will look into your query and get back to you shortly.",
+            "severity": "medium",
+            "confidence_score": 0.3,
+            "error": str(e)
+        }
