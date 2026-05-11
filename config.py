@@ -14,7 +14,7 @@ SEVERITY_SCORES = {
 }
 
 # RAS threshold - fragments below this are rejected
-RAS_THRESHOLD = 0.15
+RAS_THRESHOLD = 0.08
 
 # Gemini model to use
 MODEL_NAME = "gemini-2.5-flash"

@@ -54,7 +54,7 @@ def run_supportguard(customer_query: str) -> dict:
     total_claims = len(unsupported) + len(supported)
     hallucination_rate = len(unsupported) / total_claims if total_claims > 0 else 0
 
-    policy_compliant = 1.0 if policy_output.get("policy_compliant", False) else 0.0
+    policy_compliant = 1.0 if policy_output.get("policy_compliant") == True else 0.0
     ras_scores       = arbitration_result["ras_scores"]
 
     reliability = calculate_reliability(hallucination_rate, policy_compliant, ras_scores)
