@@ -890,3 +890,5 @@
 2026-05-12 00:03:28,227 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 0.6 | Confidence: 0.5 | RAS: 0.03
 2026-05-12 00:03:28,236 | INFO | __main__ | Query complete | RAS: 0.1265 | Reliability: 0.5846 | Hallucination Rate: 0
 2026-05-12 00:05:46,927 | INFO | werkzeug |  * Restarting with stat
+2026-05-12 00:06:08,238 | WARNING | werkzeug |  * Debugger is active!
+2026-05-12 00:06:08,266 | INFO | werkzeug |  * Debugger PIN: 137-806-413
