@@ -1,8 +1,8 @@
 {
   "multi_agent_summary": {
     "avg_hallucination_rate": 0.0,
-    "avg_policy_compliance": 0.0,
-    "avg_ras": 0.1319
+    "avg_policy_compliance": 0.375,
+    "avg_ras": 0.1461
   },
   "stability": {
     "ras_scores": [

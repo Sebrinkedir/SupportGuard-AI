@@ -64,5 +64,7 @@ def build_final_response(arbitration_result: dict) -> str:
     priority = {"policy": 1, "factual": 2, "intent": 3, "tone": 4}
     approved.sort(key=lambda x: priority.get(x["agent"], 5))
 
-    combined = " ".join([f["fragment"] for f in approved])
+    # Use only top 2 highest RAS fragments for cleaner response
+    approved_sorted = sorted(approved, key=lambda x: x["ras"], reverse=True)
+    combined = " ".join([f["fragment"] for f in approved_sorted[:2]])
     return combined

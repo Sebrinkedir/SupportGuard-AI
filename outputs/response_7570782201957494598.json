@@ -1,0 +1,87 @@
+{
+  "query": "I cannot log into my account.",
+  "final_response": "It sounds like you're having trouble logging into your account. Please try using the 'Forgot Password' option on the login page. If that doesn't resolve the issue, contact our support team for further assistance. If you cannot log into your account, please use the Forgot Password option on the login page. Should the issue persist, contact support and we will verify your identity to restore access.",
+  "arbitration": {
+    "approved_fragments": [
+      {
+        "agent": "policy",
+        "fragment": "I understand you're having trouble logging into your account. You can typically reset your password by clicking the 'Forgot Password' link on our login page. If you're still unable to access your account after trying this, please provide more details, and a human support agent will be happy to assist you after verifying your identity.",
+        "ras": 0.1995
+      },
+      {
+        "agent": "factual",
+        "fragment": "If you cannot log into your account, please use the Forgot Password option on the login page. Should the issue persist, contact support and we will verify your identity to restore access.",
+        "ras": 0.25
+      },
+      {
+        "agent": "intent",
+        "fragment": "It sounds like you're having trouble logging into your account. Please try using the 'Forgot Password' option on the login page. If that doesn't resolve the issue, contact our support team for further assistance.",
+        "ras": 0.3
+      },
+      {
+        "agent": "tone",
+        "fragment": "I'm so sorry to hear you're having trouble logging into your account. Let's get this sorted out for you right away.",
+        "ras": 0.1
+      }
+    ],
+    "rejected_fragments": [],
+    "ras_scores": [
+      0.3,
+      0.1995,
+      0.25,
+      0.1
+    ],
+    "average_ras": 0.2124
+  },
+  "reliability": {
+    "reliability_score": 0.9852,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.926,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "account_access",
+      "key_elements": [
+        "login issue",
+        "account access"
+      ],
+      "response_fragment": "It sounds like you're having trouble logging into your account. Please try using the 'Forgot Password' option on the login page. If that doesn't resolve the issue, contact our support team for further assistance.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "I understand you're having trouble logging into your account. You can typically reset your password by clicking the 'Forgot Password' link on our login page. If you're still unable to access your account after trying this, please provide more details, and a human support agent will be happy to assist you after verifying your identity.",
+      "severity": "medium",
+      "confidence_score": 0.95,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "To resolve login issues, please use the Forgot Password option on the login page.",
+        "If the issue persists after trying the Forgot Password option, contact support.",
+        "Support will verify your identity and restore access."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "If you cannot log into your account, please use the Forgot Password option on the login page. Should the issue persist, contact support and we will verify your identity to restore access.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "I'm so sorry to hear you're having trouble logging into your account. Let's get this sorted out for you right away.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "tone"
+    }
+  ]
+}

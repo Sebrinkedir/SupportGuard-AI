@@ -1,0 +1,89 @@
+{
+  "query": "I am basic, Can i get a refund",
+  "final_response": "As a Basic plan user, you may be eligible for a refund if your request is made within 14 days of purchase. To initiate a refund request and have your specific situation reviewed against our policy, please contact our support team, as they handle all refund processing. To assist you with your refund request, please provide more details about the charge you wish to have refunded or the reason for your request. You can also review our refund policy on our website, or contact our support team directly for specific assistance.",
+  "arbitration": {
+    "approved_fragments": [
+      {
+        "agent": "policy",
+        "fragment": "As a Basic plan user, you may be eligible for a refund if your request is made within 14 days of purchase. To initiate a refund request and have your specific situation reviewed against our policy, please contact our support team, as they handle all refund processing.",
+        "ras": 0.3325
+      },
+      {
+        "agent": "factual",
+        "fragment": "Our FAQ documents indicate that refunds are processed for duplicate charges due to a system error. If you've been charged twice, you can contact support with your transaction ID for investigation and a refund within 5-7 business days. The documents do not provide information on general refund eligibility.",
+        "ras": 0.1275
+      },
+      {
+        "agent": "intent",
+        "fragment": "To assist you with your refund request, please provide more details about the charge you wish to have refunded or the reason for your request. You can also review our refund policy on our website, or contact our support team directly for specific assistance.",
+        "ras": 0.285
+      }
+    ],
+    "rejected_fragments": [
+      {
+        "agent": "tone",
+        "fragment": "I understand you're looking into a refund. To help me assist you best, could you please clarify what you mean by 'basic' in relation to your request? For example, are you referring to a specific product, service, or account type?",
+        "ras": 0.054
+      }
+    ],
+    "ras_scores": [
+      0.285,
+      0.3325,
+      0.1275,
+      0.054
+    ],
+    "average_ras": 0.1998
+  },
+  "reliability": {
+    "reliability_score": 0.7773,
+    "hallucination_rate": 0.5,
+    "policy_compliance_score": 1.0,
+    "stability": 0.8867,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "refund request"
+      ],
+      "response_fragment": "To assist you with your refund request, please provide more details about the charge you wish to have refunded or the reason for your request. You can also review our refund policy on our website, or contact our support team directly for specific assistance.",
+      "severity": "high",
+      "confidence_score": 0.95,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "As a Basic plan user, you may be eligible for a refund if your request is made within 14 days of purchase. To initiate a refund request and have your specific situation reviewed against our policy, please contact our support team, as they handle all refund processing.",
+      "severity": "high",
+      "confidence_score": 0.95,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "Refunds are processed for duplicate charges due to a system error."
+      ],
+      "unsupported_claims": [
+        "Information regarding a general refund policy is not available in the FAQ documents."
+      ],
+      "response_fragment": "Our FAQ documents indicate that refunds are processed for duplicate charges due to a system error. If you've been charged twice, you can contact support with your transaction ID for investigation and a refund within 5-7 business days. The documents do not provide information on general refund eligibility.",
+      "severity": "medium",
+      "confidence_score": 0.85,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [
+        "Ambiguity of 'basic' requires clarification"
+      ],
+      "response_fragment": "I understand you're looking into a refund. To help me assist you best, could you please clarify what you mean by 'basic' in relation to your request? For example, are you referring to a specific product, service, or account type?",
+      "severity": "medium",
+      "confidence_score": 0.9,
+      "agent": "tone"
+    }
+  ]
+}
