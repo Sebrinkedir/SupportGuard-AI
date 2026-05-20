@@ -1506,3 +1506,119 @@ Current question: Okay thank you.
 2026-05-20 02:00:31,921 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
 2026-05-20 02:00:32,035 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
 2026-05-20 02:00:32,037 | ERROR | single_agent | Single agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 26.990060725s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '26s'}]}}
+2026-05-20 19:12:16,909 | INFO | __main__ | New query received: I was charged twice this month and I want a refund.
+2026-05-20 19:12:16,924 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:12:17,312 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:12:17,326 | ERROR | agents.intent_agent | Intent agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:12:17,353 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:12:17,601 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:12:17,602 | ERROR | agents.policy_agent | Policy agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:12:17,603 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:12:17,870 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:12:17,872 | ERROR | agents.factual_agent | Factual agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:12:17,872 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:12:18,168 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:12:18,170 | ERROR | agents.tone_agent | Tone agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:12:18,170 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.126
+2026-05-20 19:12:18,171 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 1.0 | Confidence: 0.7 | RAS: 0.245
+2026-05-20 19:12:18,171 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.105
+2026-05-20 19:12:18,171 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 0.6 | Confidence: 0.5 | RAS: 0.03
+2026-05-20 19:12:18,172 | INFO | __main__ | Query complete | RAS: 0.1265 | Reliability: 0.5846 | Hallucination Rate: 0
+2026-05-20 19:13:49,039 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-20 19:13:49,040 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-05-20 19:13:49,044 | INFO | werkzeug |  * Restarting with stat
+2026-05-20 19:13:57,595 | WARNING | werkzeug |  * Debugger is active!
+2026-05-20 19:13:57,615 | INFO | werkzeug |  * Debugger PIN: 137-806-413
+2026-05-20 19:14:06,515 | INFO | werkzeug | 127.0.0.1 - - [20/May/2026 19:14:06] "GET / HTTP/1.1" 200 -
+2026-05-20 19:14:25,509 | INFO | main | New query received: Hi, how can i update my billing address ?
+2026-05-20 19:14:25,511 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:25,784 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:25,786 | ERROR | agents.intent_agent | Intent agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:25,790 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:26,102 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:26,104 | ERROR | agents.policy_agent | Policy agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:26,106 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:26,380 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:26,383 | ERROR | agents.factual_agent | Factual agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:26,383 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:26,649 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:26,650 | ERROR | agents.tone_agent | Tone agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:26,651 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.126
+2026-05-20 19:14:26,651 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 1.0 | Confidence: 0.7 | RAS: 0.245
+2026-05-20 19:14:26,651 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.105
+2026-05-20 19:14:26,652 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 0.6 | Confidence: 0.5 | RAS: 0.03
+2026-05-20 19:14:26,652 | INFO | main | Query complete | RAS: 0.1265 | Reliability: 0.5846 | Hallucination Rate: 0
+2026-05-20 19:14:26,666 | INFO | werkzeug | 127.0.0.1 - - [20/May/2026 19:14:26] "POST /ask HTTP/1.1" 200 -
+2026-05-20 19:14:51,777 | INFO | main | New query received: Previous conversation:
+User: Hi, how can i update my billing address ?
+Assistant: Please contact our support team for assistance with this request. Thank you for contacting support. We will look into your query.
+
+Current question: where do i update my billing address ?
+2026-05-20 19:14:51,779 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:52,059 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:52,060 | ERROR | agents.intent_agent | Intent agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:52,063 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:52,359 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:52,359 | ERROR | agents.policy_agent | Policy agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:52,361 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:52,543 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-05-20 19:14:52,544 | ERROR | agents.factual_agent | Factual agent unexpected error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 7.219916546s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7s'}]}}
+2026-05-20 19:14:52,545 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:14:52,854 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:14:52,855 | ERROR | agents.tone_agent | Tone agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:14:52,856 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.126
+2026-05-20 19:14:52,856 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 1.0 | Confidence: 0.7 | RAS: 0.245
+2026-05-20 19:14:52,857 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.105
+2026-05-20 19:14:52,857 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 0.6 | Confidence: 0.5 | RAS: 0.03
+2026-05-20 19:14:52,858 | INFO | main | Query complete | RAS: 0.1265 | Reliability: 0.5846 | Hallucination Rate: 0
+2026-05-20 19:14:52,860 | INFO | werkzeug | 127.0.0.1 - - [20/May/2026 19:14:52] "POST /ask HTTP/1.1" 200 -
+2026-05-20 19:15:24,127 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-20 19:15:24,127 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-05-20 19:15:24,130 | INFO | werkzeug |  * Restarting with stat
+2026-05-20 19:15:32,939 | WARNING | werkzeug |  * Debugger is active!
+2026-05-20 19:15:32,948 | INFO | werkzeug |  * Debugger PIN: 137-806-413
+2026-05-20 19:15:32,973 | INFO | werkzeug | 127.0.0.1 - - [20/May/2026 19:15:32] "GET / HTTP/1.1" 200 -
+2026-05-20 19:16:03,738 | INFO | main | New query received: Hi, where do i update my billing address?
+2026-05-20 19:16:03,742 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:04,203 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:04,204 | ERROR | agents.intent_agent | Intent agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:04,208 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:04,590 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:04,591 | ERROR | agents.policy_agent | Policy agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:04,593 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:04,987 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:04,989 | ERROR | agents.factual_agent | Factual agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:04,989 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:05,355 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:05,356 | ERROR | agents.tone_agent | Tone agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:05,357 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.126
+2026-05-20 19:16:05,357 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 1.0 | Confidence: 0.7 | RAS: 0.245
+2026-05-20 19:16:05,357 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.105
+2026-05-20 19:16:05,357 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 0.6 | Confidence: 0.5 | RAS: 0.03
+2026-05-20 19:16:05,358 | INFO | main | Query complete | RAS: 0.1265 | Reliability: 0.5846 | Hallucination Rate: 0
+2026-05-20 19:16:05,361 | INFO | werkzeug | 127.0.0.1 - - [20/May/2026 19:16:05] "POST /ask HTTP/1.1" 200 -
+2026-05-20 19:16:39,531 | INFO | main | New query received: Previous conversation:
+User: Hi, where do i update my billing address?
+Assistant: Please contact our support team for assistance with this request. Thank you for contacting support. We will look into your query.
+
+Current question: I am basic and used the service already can o get refund ?
+2026-05-20 19:16:39,536 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:39,823 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:39,824 | ERROR | agents.intent_agent | Intent agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:39,827 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:40,111 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:40,112 | ERROR | agents.policy_agent | Policy agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:40,113 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:40,390 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:40,391 | ERROR | agents.factual_agent | Factual agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:40,392 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-05-20 19:16:40,683 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 403 Forbidden"
+2026-05-20 19:16:40,683 | ERROR | agents.tone_agent | Tone agent unexpected error: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}
+2026-05-20 19:16:40,684 | INFO | arbitration | Agent: intent | Weight: 0.3 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.126
+2026-05-20 19:16:40,684 | INFO | arbitration | Agent: policy | Weight: 0.35 | Severity: 1.0 | Confidence: 0.7 | RAS: 0.245
+2026-05-20 19:16:40,684 | INFO | arbitration | Agent: factual | Weight: 0.25 | Severity: 0.6 | Confidence: 0.7 | RAS: 0.105
+2026-05-20 19:16:40,685 | INFO | arbitration | Agent: tone | Weight: 0.1 | Severity: 0.6 | Confidence: 0.5 | RAS: 0.03
+2026-05-20 19:16:40,686 | INFO | main | Query complete | RAS: 0.1265 | Reliability: 0.5846 | Hallucination Rate: 0
+2026-05-20 19:16:40,689 | INFO | werkzeug | 127.0.0.1 - - [20/May/2026 19:16:40] "POST /ask HTTP/1.1" 200 -
