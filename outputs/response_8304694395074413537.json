@@ -1,0 +1,89 @@
+{
+  "query": "How do i update my billing details ?",
+  "final_response": "You can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method. You can update your billing details by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+  "arbitration": {
+    "approved_fragments": [
+      {
+        "agent": "policy",
+        "fragment": "You can update your billing details by logging into your account and navigating to the 'Settings' or 'Billing' section. Look for options like 'Payment Methods' or 'Subscription Details'. If you have trouble finding it, please let us know!",
+        "ras": 0.1995
+      },
+      {
+        "agent": "factual",
+        "fragment": "You can update your billing details by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+        "ras": 0.2375
+      },
+      {
+        "agent": "intent",
+        "fragment": "You can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+        "ras": 0.3
+      }
+    ],
+    "rejected_fragments": [
+      {
+        "agent": "tone",
+        "fragment": "We appreciate your patience and are happy to help you with this.",
+        "ras": 0.03
+      }
+    ],
+    "ras_scores": [
+      0.3,
+      0.1995,
+      0.2375,
+      0.03
+    ],
+    "average_ras": 0.1918
+  },
+  "reliability": {
+    "reliability_score": 0.98,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.9,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "update billing details",
+        "payment method"
+      ],
+      "response_fragment": "You can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+      "severity": "high",
+      "confidence_score": 1.0,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "You can update your billing details by logging into your account and navigating to the 'Settings' or 'Billing' section. Look for options like 'Payment Methods' or 'Subscription Details'. If you have trouble finding it, please let us know!",
+      "severity": "medium",
+      "confidence_score": 0.95,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "You can update your payment method by going to Account Settings",
+        "selecting Billing",
+        "and clicking Update Payment Method."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "You can update your billing details by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+      "severity": "high",
+      "confidence_score": 0.95,
+      "agent": "factual"
+    },
+    {
+      "agent": "tone",
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "We appreciate your patience and are happy to help you with this.",
+      "severity": "medium",
+      "confidence_score": 0.5,
+      "error": "[SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1020)"
+    }
+  ]
+}

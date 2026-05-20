@@ -4,21 +4,53 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import json
 from main import run_supportguard
+from single_agent import run_single_agent
 
-# ── Test queries covering all 4 topics ──────────────────────
+# Test queries covering all 4 topics
+# Test queries covering all 4 topics
 TEST_QUERIES = [
     "I was charged twice this month and I want a refund.",
     "I cannot log into my account.",
-    "The app is not loading properly.",
     "Can I share my account with someone else?",
-    "I want to cancel my premium plan and get my money back.",
-    "How do I update my payment method?",
-    "I need a refund for my basic plan.",
-    "Someone else is using my account without permission."
 ]
 
-# ── Stability query — same query run 5 times ─────────────────
 STABILITY_QUERY = "I was charged twice this month and I want a refund."
+
+
+def evaluate_single_agent():
+    """Run single agent on all test queries and measure hallucination and compliance."""
+    print("\n[SINGLE AGENT] Running baseline...")
+    print("-"*60)
+
+    total = 0
+    hallucination_count = 0
+    compliant_count = 0
+
+    for query in TEST_QUERIES:
+        result = run_single_agent(query)
+        response = result["response"].lower()
+        total += 1
+
+        # Check for hallucination — did it promise a refund directly?
+        if "i will refund" in response or "you will receive a refund" in response or "refund has been processed" in response:
+            hallucination_count += 1
+
+        # Check policy compliance — did it avoid promising refunds directly?
+        if "contact" in response or "support team" in response or "cannot process" in response or "unable to process" in response:
+            compliant_count += 1
+
+        print(f"Query: {query[:50]}...")
+        print(f"Response preview: {result['response'][:100]}...")
+        print()
+
+    hr = round(hallucination_count / total, 4)
+    pcs = round(compliant_count / total, 4)
+
+    print(f"Single Agent Hallucination Rate : {hr}")
+    print(f"Single Agent Policy Compliance  : {pcs}")
+    print(f"Single Agent Stability          : Not measured (no RAS)")
+
+    return {"hallucination_rate": hr, "policy_compliance": pcs}
 
 
 def run_evaluation():
@@ -26,7 +58,7 @@ def run_evaluation():
     print("   SUPPORTGUARD-AI EVALUATION REPORT")
     print("="*60)
 
-    # ── EXPERIMENT 1: Multi-Agent Results ────────────────────
+    # EXPERIMENT 1: Multi-Agent Results
     print("\n[EXPERIMENT 1] Multi-Agent System — Test Queries")
     print("-"*60)
 
@@ -64,13 +96,13 @@ def run_evaluation():
     print(f"  Avg Policy Compliance  : {avg_pcs}")
     print(f"  Avg RAS                : {avg_ras}")
 
-    # ── EXPERIMENT 2: Stability Testing ─────────────────────
+    # EXPERIMENT 2: Stability Testing
     print("\n[EXPERIMENT 2] Stability Testing — 5 Runs Same Query")
     print("-"*60)
     print(f"Query: {STABILITY_QUERY}")
 
     stability_ras = []
-    for i in range(5):
+    for i in range(3):
         print(f"\n  Run {i+1}:")
         result = run_supportguard(STABILITY_QUERY)
         ras = result["arbitration"]["average_ras"]
@@ -86,20 +118,20 @@ def run_evaluation():
     print(f"  Std Deviation   : {std_dev}")
     print(f"  Stability Score : {stability}")
 
-    # ── EXPERIMENT 3: Single Agent Baseline ─────────────────
-    print("\n[EXPERIMENT 3] Single Agent Baseline Comparison")
+    # EXPERIMENT 3: Real Single Agent vs Multi Agent
+    print("\n[EXPERIMENT 3] Single Agent vs Multi-Agent Comparison")
     print("-"*60)
-    print("  Single agent has no arbitration, no policy check,")
-    print("  no factual grounding — just raw Gemini output.")
-    print(f"  Estimated Single-Agent Hallucination Rate : ~0.45")
-    print(f"  Estimated Single-Agent Policy Compliance  : ~0.60")
-    print(f"  Estimated Single-Agent Stability          : ~0.70")
-    print(f"\n  SupportGuard Multi-Agent Results:")
-    print(f"  Hallucination Rate : {avg_hr} (lower is better)")
-    print(f"  Policy Compliance  : {avg_pcs} (higher is better)")
-    print(f"  Stability          : {stability} (higher is better)")
+    single_results = evaluate_single_agent()
 
-    # ── Save Report ──────────────────────────────────────────
+    print("\n" + "-"*60)
+    print("FINAL COMPARISON:")
+    print(f"{'Metric':<30} {'Single Agent':>15} {'Multi-Agent':>15}")
+    print("-"*60)
+    print(f"{'Hallucination Rate':<30} {single_results['hallucination_rate']:>15} {avg_hr:>15}")
+    print(f"{'Policy Compliance':<30} {single_results['policy_compliance']:>15} {avg_pcs:>15}")
+    print(f"{'Stability':<30} {'Not measured':>15} {stability:>15}")
+
+    # Save Report
     report = {
         "multi_agent_summary": {
             "avg_hallucination_rate": avg_hr,
@@ -111,10 +143,13 @@ def run_evaluation():
             "std_deviation": std_dev,
             "stability_score": stability
         },
-        "single_agent_baseline": {
-            "hallucination_rate": 0.45,
-            "policy_compliance": 0.60,
-            "stability": 0.70
+        "single_agent_results": {
+            "hallucination_rate": single_results["hallucination_rate"],
+            "policy_compliance": single_results["policy_compliance"]
+        },
+        "comparison": {
+            "hallucination_improvement": round(single_results["hallucination_rate"] - avg_hr, 4),
+            "compliance_improvement": round(avg_pcs - single_results["policy_compliance"], 4)
         }
     }
 

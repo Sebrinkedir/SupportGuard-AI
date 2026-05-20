@@ -1,0 +1,87 @@
+{
+  "query": "Hi, where do i update my billing address ?",
+  "final_response": "You can typically update your billing address by navigating to your Account Settings and looking for the 'Billing' section. You can usually update your billing address in your account's 'Billing Settings' or 'Account Settings' section. Look for an option related to 'Payment Methods' or 'Billing Information'.",
+  "arbitration": {
+    "approved_fragments": [
+      {
+        "agent": "policy",
+        "fragment": "You can usually update your billing address in your account's 'Billing Settings' or 'Account Settings' section. Look for an option related to 'Payment Methods' or 'Billing Information'.",
+        "ras": 0.21
+      },
+      {
+        "agent": "factual",
+        "fragment": "While the FAQs do not provide specific instructions for updating your billing address, you can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+        "ras": 0.1275
+      },
+      {
+        "agent": "intent",
+        "fragment": "You can typically update your billing address by navigating to your Account Settings and looking for the 'Billing' section.",
+        "ras": 0.285
+      }
+    ],
+    "rejected_fragments": [
+      {
+        "agent": "tone",
+        "fragment": "Absolutely! You can usually update your billing address in your 'Account Settings' or 'Profile' section after logging in. Just look for 'Billing Information' or 'Addresses'.",
+        "ras": 0.057
+      }
+    ],
+    "ras_scores": [
+      0.285,
+      0.21,
+      0.1275,
+      0.057
+    ],
+    "average_ras": 0.1699
+  },
+  "reliability": {
+    "reliability_score": 0.9829,
+    "hallucination_rate": 0.0,
+    "policy_compliance_score": 1.0,
+    "stability": 0.9143,
+    "alpha": 0.4,
+    "beta": 0.4,
+    "gamma": 0.2,
+    "formula": "R = \u03b1(1 - HR) + \u03b2PCS + \u03b3Stability"
+  },
+  "agent_outputs": [
+    {
+      "topic": "billing",
+      "key_elements": [
+        "update billing address",
+        "location/steps"
+      ],
+      "response_fragment": "You can typically update your billing address by navigating to your Account Settings and looking for the 'Billing' section.",
+      "severity": "high",
+      "confidence_score": 0.95,
+      "agent": "intent"
+    },
+    {
+      "policy_compliant": true,
+      "violations": [],
+      "response_fragment": "You can usually update your billing address in your account's 'Billing Settings' or 'Account Settings' section. Look for an option related to 'Payment Methods' or 'Billing Information'.",
+      "severity": "medium",
+      "confidence_score": 1.0,
+      "agent": "policy"
+    },
+    {
+      "supported_claims": [
+        "The FAQ documents do not provide specific instructions on how to update your billing address.",
+        "You can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method."
+      ],
+      "unsupported_claims": [],
+      "response_fragment": "While the FAQs do not provide specific instructions for updating your billing address, you can update your payment method by going to Account Settings, selecting Billing, and clicking Update Payment Method.",
+      "severity": "medium",
+      "confidence_score": 0.85,
+      "agent": "factual"
+    },
+    {
+      "tone_issues": [],
+      "clarity_issues": [],
+      "response_fragment": "Absolutely! You can usually update your billing address in your 'Account Settings' or 'Profile' section after logging in. Just look for 'Billing Information' or 'Addresses'.",
+      "severity": "medium",
+      "confidence_score": 0.95,
+      "agent": "tone"
+    }
+  ]
+}

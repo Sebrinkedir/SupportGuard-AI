@@ -1,13 +1,11 @@
 {
   "multi_agent_summary": {
     "avg_hallucination_rate": 0.0,
-    "avg_policy_compliance": 0.375,
-    "avg_ras": 0.1461
+    "avg_policy_compliance": 0.0,
+    "avg_ras": 0.1265
   },
   "stability": {
     "ras_scores": [
-      0.1265,
-      0.1265,
       0.1265,
       0.1265,
       0.1265
@@ -15,9 +13,12 @@
     "std_deviation": 0.0,
     "stability_score": 1.0
   },
-  "single_agent_baseline": {
-    "hallucination_rate": 0.45,
-    "policy_compliance": 0.6,
-    "stability": 0.7
+  "single_agent_results": {
+    "hallucination_rate": 0.0,
+    "policy_compliance": 0.0
+  },
+  "comparison": {
+    "hallucination_improvement": 0.0,
+    "compliance_improvement": 0.0
   }
 }
